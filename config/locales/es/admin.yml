@@ -360,7 +360,6 @@ es:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
           edit: Editar
-          delete: Borrar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
@@ -495,7 +494,6 @@ es:
           banner_title: Colores del encabezado
         index:
           create: Nuevo proceso
-          delete: Borrar
           title: Procesos de legislación colaborativa
           filters:
             active: Activos
@@ -625,7 +623,6 @@ es:
         no_managers: No hay gestores.
       manager:
         add: Añadir como gestor
-        delete: Borrar
       search:
         title: "Gestores: Búsqueda de usuarios"
     menu:
@@ -705,7 +702,6 @@ es:
         no_administrators: No hay administradores.
       administrator:
         add: Añadir como Administrador
-        delete: Borrar
         restricted_removal: "Lo sentimos, no puedes eliminarte a ti mismo de la lista"
       search:
         title: "Administradores: Búsqueda de usuarios"
@@ -720,7 +716,6 @@ es:
         no_moderators: No hay moderadores.
       moderator:
         add: Añadir como Moderador
-        delete: Borrar
       search:
         title: "Moderadores: Búsqueda de usuarios"
     segment_recipient:
@@ -883,7 +878,6 @@ es:
         can_edit_dossier: "Puede editar informes"
       valuator:
         add: Añadir como evaluador
-        delete: Borrar
       search:
         title: "Evaluadores: Búsqueda de usuarios"
       form:
@@ -1305,8 +1299,6 @@ es:
       index:
         title: Zonas
         create: Crear una zona
-        edit: Editar
-        delete: Borrar
       geozone:
         name: Nombre
         external_code: Código externo
@@ -1488,7 +1480,6 @@ es:
         index:
           title: Personalizar imágenes
           update: Actualizar
-          delete: Borrar
           image: Imagen
         update:
           notice: Imagen actualizada correctamente
