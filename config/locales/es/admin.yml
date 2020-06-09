@@ -359,7 +359,6 @@ es:
         index:
           description: "Cuando los usuarios crean propuestas pueden acceder a un panel de progreso de su propuesta, donde se le puede proponer recursos y recomendaciones para conseguir apoyos a su idea."
           create: Crear recurso o acción
-          edit: Editar
           active: 'Si'
           inactive: 'No'
           title: Recursos y acciones
