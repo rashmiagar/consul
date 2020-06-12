@@ -413,6 +413,7 @@ GEM
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
+    rack-timeout (0.5.2)
     rails (5.1.7)
       actioncable (= 5.1.7)
       actionmailer (= 5.1.7)
@@ -667,6 +668,7 @@ DEPENDENCIES
   pg (~> 0.21.0)
   pg_search (~> 2.0.1)
   puma (~> 4.3.5)
+  rack-timeout (~> 0.5.2)
   rails (= 5.1.7)
   rails-assets-leaflet!
   rails-assets-markdown-it (~> 8.2.1)!
@@ -699,6 +701,9 @@ DEPENDENCIES
   whenever (~> 0.10.0)
   wicked_pdf (~> 1.1.0)
   wkhtmltopdf-binary (~> 0.12.4)
+
+RUBY VERSION
+   ruby 2.4.9p362
 
 BUNDLED WITH
    2.1.4
