@@ -72,7 +72,7 @@ group :development, :test do
   gem "bullet", "~> 5.9.0"
   gem "byebug", "~> 11.1.1"
   gem "factory_bot_rails", "~> 4.8.2"
-  gem "faker", "~> 1.8.7"
+  
   gem "i18n-tasks", "~> 0.9.29"
   gem "knapsack_pro", "~> 1.15.0"
   gem "launchy", "~> 2.4.3"
@@ -109,5 +109,5 @@ group :development do
   gem "scss_lint", "~> 0.55.0", require: false
   gem "web-console", "~> 3.3.0"
 end
-
+gem "faker", "~> 1.8.7"
 eval_gemfile "./Gemfile_custom"
