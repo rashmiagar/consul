@@ -8,7 +8,7 @@ Dir["./spec/support/**/*.rb"].sort.each { |f| require f }
 Dir["./spec/shared/**/*.rb"].sort.each  { |f| require f }
 
 RSpec.configure do |config|
-  config.use_transactional_fixtures = true
+  config.use_transactional_fixtures = false
 
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
