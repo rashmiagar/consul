@@ -26,7 +26,11 @@ Rails.application.routes.draw do
   draw :valuation
   draw :verification
 
-  root "welcome#index"
+  # root "welcome#index"
+  devise_scope :user do     
+    root "users/sessions#new"
+  end
+  
   get "/welcome", to: "welcome#welcome"
   get "/consul.json", to: "installation#details"
 
