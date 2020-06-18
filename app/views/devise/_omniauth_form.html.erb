@@ -1,6 +1,6 @@
 <% if feature?(:twitter_login) || feature?(:facebook_login) || feature?(:google_login) %>
 
-  <% if current_page?(new_user_session_path) %>
+  <% if current_page?(new_user_session_path) or current_page?(root_url) %>
     <div class="row">
       <div class="small-12 column">
         <div class="margin-bottom">
