@@ -19,6 +19,7 @@ gem "delayed_job_active_record", "~> 4.1.3"
 gem "devise", "~> 4.7.1"
 gem "devise-async", "~> 1.0.0"
 gem "devise_security_extension", git: "https://github.com/phatworx/devise_security_extension.git" #, "~> 0.10"
+# gem 'figaro'
 gem "font-awesome-sass", "~> 5.8.1"
 gem "foundation-rails", "~> 6.6.1.0"
 gem "foundation_rails_helper", "~> 3.0.0"
@@ -63,6 +64,8 @@ gem "whenever", "~> 0.10.0", require: false
 gem "wicked_pdf", "~> 1.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
 gem "faker", "~> 1.8.7"
+gem "database_cleaner", "~> 1.7.0"
+
 
 source "https://rails-assets.org" do
   gem "rails-assets-leaflet"
@@ -98,7 +101,6 @@ group :development do
   gem "capistrano-rails", "~> 1.4.0", require: false
   gem "capistrano3-delayed-job", "~> 1.7.3"
   gem "capistrano3-puma", "~> 4.0.0"
-  gem "database_cleaner", "~> 1.7.0"
   gem "erb_lint", require: false
   gem "github_changelog_generator", "~> 1.15.0"
   gem "mdl", "~> 0.5.0", require: false
