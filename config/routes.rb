@@ -27,8 +27,14 @@ Rails.application.routes.draw do
   draw :verification
 
   # root "welcome#index"
-  devise_scope :user do     
-    root "users/sessions#new"
+  devise_scope :user do
+    authenticated :user do
+      root 'welcome#index' #, as: :authenticated_root
+    end
+    unauthenticated do
+      root 'users/sessions#new' #, as: :unauthenticated_root
+    end
+    
   end
   
   get "/welcome", to: "welcome#welcome"
