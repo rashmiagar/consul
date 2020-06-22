@@ -15,6 +15,7 @@ Rails.application.configure do
   # The solution to this, is to ask Rails to eager load classes.
   config.eager_load_paths += ["#{config.root}/lib"]
 
+
   # Full error reports are disabled and caching is turned on.
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
@@ -22,6 +23,8 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
+  
+  config.static_cache_control = "public, max-age=2592000"
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
