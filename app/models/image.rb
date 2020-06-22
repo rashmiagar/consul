@@ -7,7 +7,7 @@ class Image < ApplicationRecord
                                    medium: "300x300#",
                                    thumb: "140x245#"
                                  },
-                                 url: "public/system/:class/:prefix/:style/:hash.:extension",
+                                 url: "/system/:class/:prefix/:style/:hash.:extension",
                                  hash_data: ":class/:style",
                                  use_timestamp: false,
                                  hash_secret: Rails.application.secrets.secret_key_base
