@@ -29,6 +29,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       raise ActionController::RoutingError.new("Not Found") unless Setting["feature.#{feature}"]
 
       auth = request.env["omniauth.auth"]
+      puts auth
 
       identity = Identity.first_or_create_from_oauth(auth)
       @user = current_user || identity.user || User.first_or_initialize_for_oauth(auth)

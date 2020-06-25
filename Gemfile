@@ -65,6 +65,7 @@ gem "wicked_pdf", "~> 1.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
 gem "faker", "~> 1.8.7"
 gem "database_cleaner", "~> 1.7.0"
+gem "rails_12factor"
 
 
 source "https://rails-assets.org" do
@@ -83,6 +84,8 @@ group :development, :test do
   gem "letter_opener_web", "~> 1.3.4"
   gem "spring", "~> 2.0.1"
   gem "spring-commands-rspec", "~> 1.0.4"
+  gem 'awesome_print'
+  gem 'hirb'
 end
 
 group :test do
