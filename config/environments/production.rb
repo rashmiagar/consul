@@ -24,7 +24,7 @@ Rails.application.configure do
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV["RAILS_SERVE_STATIC_FILES"].present?
   
-  config.static_cache_control = "public, max-age=2592000"   #added !!
+  # config.static_cache_control = "public, max-age=2592000"   #added !!
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -63,7 +63,7 @@ Rails.application.configure do
   config.log_tags = [:request_id]
 
   # Use a different cache store in production.
-  config.cache_store = :dalli_store, { value_max_bytes: 2000000 }
+  # config.cache_store = :dalli_store, { value_max_bytes: 2000000 }   #commented this out by Rashmi
 
   # Use a real queuing backend for Active Job (and separate queues per environment)
   # config.active_job.queue_adapter     = :resque
