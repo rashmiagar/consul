@@ -56,6 +56,21 @@ Rails.application.configure do
   config.assets.raise_runtime_errors = true
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+  
+  # Paperclip settings to store images and documents on S3
+  config.paperclip_defaults = {
+    storage: :s3,
+    preserve_files: true,
+    s3_host_name: Rails.application.secrets.aws_s3_host_name,
+    url: :s3_domain_url,
+    s3_protocol: :https,
+    s3_credentials: {
+      bucket: Rails.application.secrets.aws_s3_bucket,
+      access_key_id: Rails.application.secrets.aws_access_key_id,
+      secret_access_key: Rails.application.secrets.aws_secret_access_key,
+      s3_region: Rails.application.secrets.aws_s3_region,
+    }
+  }
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
