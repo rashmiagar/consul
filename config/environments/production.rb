@@ -54,7 +54,7 @@ Rails.application.configure do
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
-  config.log_level = :warn
+  config.log_level = :debug
 
   # Prepend all log lines with the following tags.
   config.log_tags = [:request_id]
@@ -72,12 +72,32 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: Rails.application.secrets.server_name }
   config.action_mailer.asset_host = "https://#{Rails.application.secrets.server_name}"
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default :charset => "utf-8"  
+  
 
   # Configure your SMTP service credentials in secrets.yml
   if Rails.application.secrets.smtp_settings
     config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
   end
+  
+  
+  
+  # Paperclip settings to store images and documents on S3
+  config.paperclip_defaults = {
+    storage: :s3,
+    preserve_files: true,
+    s3_host_name: Rails.application.secrets.aws_s3_host_name,
+    url: :s3_domain_url,
+    s3_protocol: :https,
+    s3_credentials: {
+      bucket: Rails.application.secrets.aws_s3_bucket,
+      access_key_id: Rails.application.secrets.aws_access_key_id,
+      secret_access_key: Rails.application.secrets.aws_secret_access_key,
+      s3_region: Rails.application.secrets.aws_s3_region,
+    }
+  }
 
   # Disable locale fallbacks for I18n
   # (prevents using fallback locales set in application.rb).

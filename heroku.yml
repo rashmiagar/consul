@@ -1,0 +1,7 @@
+build:
+   languages:
+     - ruby
+   packages:
+     - imagemagick
+ run:
+   web: bundle exec puma -C config/puma.rb

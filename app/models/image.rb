@@ -7,9 +7,21 @@ class Image < ApplicationRecord
                                    medium: "300x300#",
                                    thumb: "140x245#"
                                  },
-                                 url: "/system/:class/:prefix/:style/:hash.:extension",
+                                 # storage: :s3,
+                                 # s3_credentials: {
+                                   # access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+                                   # secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
+                                   # bucket: ENV["S3_BUCKET_NAME"]
+                                 # },
+                                 # s3_credentials: Paperclip::Attachment.default_options[:s3_credentials]
+                                 # :s3_permissions => {
+                                   # :original => "private"
+                                 # },
+                                 # bucket: ENV["S3_BUCKET_NAME"],
+                                 path: "/system/:class/:prefix/:style/:hash.:extension",
                                  hash_data: ":class/:style",
                                  use_timestamp: false,
+                                 s3_region: ENV['AWS_S3_REGION'],
                                  hash_secret: Rails.application.secrets.secret_key_base
   attr_accessor :cached_attachment
 
@@ -41,6 +53,7 @@ class Image < ApplicationRecord
   end
 
   def set_attachment_from_cached_attachment
+    
     self.attachment = if Paperclip::Attachment.default_options[:storage] == :filesystem
                         File.open(cached_attachment)
                       else
