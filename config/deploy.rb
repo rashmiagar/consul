@@ -14,7 +14,7 @@ set :full_app_name, deploysecret(:full_app_name)
 set :deploy_to, deploysecret(:deploy_to)
 set :server_name, deploysecret(:server_name)
 set :db_server, deploysecret(:db_server)
-set :ssh_options, { forward_agent: true, user: fetch(:user), keys: %w(~/.ssh/id_rsa), port: deploysecret(:ssh_port)}
+set :ssh_options, { forward_agent: false, user: fetch(:user), keys: %w(/mnt/c/Users/rashm/.ssh/id_rsa), port: deploysecret(:ssh_port)}
 
 set :repo_url, "https://github.com/rashmiagar/consul.git"
 
