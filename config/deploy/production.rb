@@ -6,5 +6,5 @@ server deploysecret(:server1), user: deploysecret(:user), roles: %w[web app db i
 #server deploysecret(:server4), user: deploysecret(:user), roles: %w(web app db importer)
 set :ssh_options, {
    keys: %w("/mnt/c/Users/rashm/.ssh/id_rsa"),
-   forward_agent: false
+   forward_agent: true
  }
