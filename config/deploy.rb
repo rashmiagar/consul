@@ -71,7 +71,7 @@ namespace :deploy do
   task :seed do
     on roles(:db) do
       within release_path do
-        run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=production"
+        run "bundle exec rake db:seed RAILS_ENV=production"
       end
     end
   end
