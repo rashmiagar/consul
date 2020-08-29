@@ -65,7 +65,6 @@ gem "wicked_pdf", "~> 1.1.0"
 gem "wkhtmltopdf-binary", "~> 0.12.4"
 gem "faker", "~> 1.8.7"
 gem "database_cleaner", "~> 1.7.0"
-gem "rails_12factor"
 gem 'ed25519'
 gem 'bcrypt_pbkdf'
 
