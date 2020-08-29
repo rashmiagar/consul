@@ -67,7 +67,7 @@ gem "faker", "~> 1.8.7"
 gem "database_cleaner", "~> 1.7.0"
 gem "rails_12factor"
 gem 'ed25519'
-gem 'bcrypt_pdkdf'
+gem 'bcrypt_pbkdf'
 
 
 source "https://rails-assets.org" do
