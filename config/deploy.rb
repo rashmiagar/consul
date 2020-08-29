@@ -50,7 +50,7 @@ namespace :deploy do
   after :updating, "install_bundler_gem"
   # before "deploy:migrate", "remove_local_census_records_duplicates"
 
-  after "deploy:migrate", "add_new_settings"
+  # after "deploy:migrate", "add_new_settings"
 
   before :publishing, "smtp_ssl_and_delay_jobs_secrets"
   after  :publishing, "setup_puma"
