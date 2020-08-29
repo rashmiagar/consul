@@ -198,6 +198,7 @@ GEM
       dry-equalizer (~> 0.2)
       dry-inflector (~> 0.1, >= 0.1.2)
       dry-logic (~> 0.4, >= 0.4.2)
+    ed25519 (1.2.4)
     email_spec (2.2.0)
       htmlentities (~> 4.3.3)
       launchy (~> 2.1)
@@ -641,6 +642,7 @@ DEPENDENCIES
   devise (~> 4.7.1)
   devise-async (~> 1.0.0)
   devise_security_extension!
+  ed25519
   email_spec (~> 2.2.0)
   erb_lint
   factory_bot_rails (~> 4.8.2)
