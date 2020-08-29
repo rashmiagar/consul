@@ -66,6 +66,14 @@ namespace :deploy do
     after "add_new_settings", "execute_release_tasks"
     invoke "deploy"
   end
+
+  task :restart do 
+    on roles(:app) do 
+      within release_path do 
+        execute :touch, 'tmp/restart.txt'
+      end
+    end
+  end
 end
 
 task :install_bundler_gem do
