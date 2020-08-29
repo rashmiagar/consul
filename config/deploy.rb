@@ -67,14 +67,18 @@ namespace :deploy do
     invoke "deploy"
   end
 
-  task :restart do 
-    on roles(:app) do 
-      within release_path do 
-        execute :touch, 'tmp/restart.txt'
+  desc "reload the database with seed data"
+  task :seed do
+    on roles(:db) do
+      within release_path do
+        run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=production"
       end
     end
   end
 end
+
+
+
 
 task :install_bundler_gem do
   on roles(:app) do
