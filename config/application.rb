@@ -70,7 +70,7 @@ module Consul
     config.autoload_paths << Rails.root.join("lib")
     config.time_zone = "Madrid"
     config.active_job.queue_adapter = :delayed_job
-
+    config.assets.initialize_on_precompile = false
     # CONSUL specific custom overrides
     # Read more on documentation:
     # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md
