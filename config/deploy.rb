@@ -51,6 +51,7 @@ namespace :deploy do
   # before "deploy:migrate", "remove_local_census_records_duplicates"
 
   # after "deploy:migrate", "add_new_settings"
+  before :publishing, "seed"
 
   before :publishing, "smtp_ssl_and_delay_jobs_secrets"
   after  :publishing, "setup_puma"
