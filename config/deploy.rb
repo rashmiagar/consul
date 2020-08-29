@@ -69,11 +69,8 @@ namespace :deploy do
 
   desc "reload the database with seed data"
   task :seed do
-    on roles(:db) do
-      within release_path do
-        run "bundle exec rake db:seed RAILS_ENV=production"
-      end
-    end
+    run "bundle exec rake db:seed RAILS_ENV=production"
+    invoke "deploy"
   end
 end
 
