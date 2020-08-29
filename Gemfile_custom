@@ -3,3 +3,9 @@
 # * English: https://github.com/consul/consul/blob/master/CUSTOMIZE_EN.md#gemfile
 # * Spanish: https://github.com/consul/consul/blob/master/CUSTOMIZE_ES.md#gemfile
 #
+
+gem 'rails_12factor'
+gem 'figaro'
+gem 'aws-sdk-s3', '~> 1'
+
+ruby '2.4.9'

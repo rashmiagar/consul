@@ -51,7 +51,7 @@ namespace :deploy do
   # before "deploy:migrate", "remove_local_census_records_duplicates"
 
   # after "deploy:migrate", "add_new_settings"
-  before :publishing, "seed"
+  # before :publishing, "seed"
 
   before :publishing, "smtp_ssl_and_delay_jobs_secrets"
   after  :publishing, "setup_puma"
@@ -75,16 +75,16 @@ namespace :deploy do
   # end
 end
 
-task :seed do
-  puts "\n=== Seeding Database ===\n"
-  on primary :db do
-   within current_path do
-     with rails_env: fetch(:stage) do
-       execute :rake, 'db:seed'
-     end
-   end
-  end
- end
+# task :seed do
+#   puts "\n=== Seeding Database ===\n"
+#   on primary :db do
+#    within current_path do
+#      with rails_env: fetch(:stage) do
+#        execute :rake, 'db:seed'
+#      end
+#    end
+#   end
+#  end
 
 
 task :install_bundler_gem do

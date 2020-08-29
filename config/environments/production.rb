@@ -84,6 +84,23 @@ Rails.application.configure do
     config.action_mailer.delivery_method = Rails.application.secrets.mailer_delivery_method || :smtp
     config.action_mailer.smtp_settings = Rails.application.secrets.smtp_settings
   end
+  
+  
+  
+  # Paperclip settings to store images and documents on S3
+  config.paperclip_defaults = {
+    storage: :s3,
+    preserve_files: true,
+    s3_host_name: Rails.application.secrets.aws_s3_host_name,
+    url: :s3_domain_url,
+    s3_protocol: :https,
+    s3_credentials: {
+      bucket: Rails.application.secrets.aws_s3_bucket,
+      access_key_id: Rails.application.secrets.aws_access_key_id,
+      secret_access_key: Rails.application.secrets.aws_secret_access_key,
+      s3_region: Rails.application.secrets.aws_s3_region,
+    }
+  }
 
   # Disable locale fallbacks for I18n
   # (prevents using fallback locales set in application.rb).
